@@ -7,7 +7,6 @@ function MyApp({ Component, pageProps }) {
   const Layout = Component.Layout || DefaultLayout
   return (
     <div>
-      <NavBar />
       <Layout>
         <Component {...pageProps} />
       </Layout>
@@ -16,7 +15,12 @@ function MyApp({ Component, pageProps }) {
 }
 
 const DefaultLayout = ({ children }) => {
-  return <MainLayout>{children} </MainLayout>
+  return (
+    <div>
+      <NavBar />
+      <MainLayout>{children} </MainLayout>
+    </div>
+  )
 }
 
 export default MyApp
